@@ -19,6 +19,7 @@ const Theme = {
     DARK: 'dark-theme',
   };
 
+  body.classList.add('light-theme')
   checkBoxTheme.addEventListener('input', () => {
     body.classList.replace('light-theme', 'dark-theme')
     // body.classList.remove('light-theme')
