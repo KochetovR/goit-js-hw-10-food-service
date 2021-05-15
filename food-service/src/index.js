@@ -19,7 +19,16 @@ const Theme = {
     DARK: 'dark-theme',
   };
 
-  body.classList.add('light-theme')
+  const savedTheme = localStorage.getItem('theme')
+  body.classList.add(savedTheme)
+
+  if(body.classList.contains('dark-theme')) {
+    checkBoxTheme.checked = true
+  }
+  if(!body.classList.contains('dark-theme')){
+    body.classList.add('light-theme')
+  }
+  
   checkBoxTheme.addEventListener('input', () => {
     body.classList.replace('light-theme', 'dark-theme')
     // body.classList.remove('light-theme')
@@ -32,9 +41,5 @@ const Theme = {
     }
   })
 
-  const savedTheme = localStorage.getItem('theme')
-  body.classList.add(savedTheme)
-
-  if(body.classList.contains('dark-theme')) {
-    checkBoxTheme.checked = true
-  }
+  
+  
